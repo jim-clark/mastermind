@@ -1,1 +1,45 @@
-/* Empty. Add your own CSS if you like */
+/* our custom css */
+
+.left-border {
+  border-left: 1px solid #b2b2b2;
+}
+
+.turn {
+  border-right-width: 0;
+}
+
+.turn-num {
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 19px;
+}
+
+.turn .score-wrap {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.select-icons .button.selected-icon {
+  color: #28a54c;
+}
+
+.perfect {
+  display: inline-block;
+  /*margin: 5%;*/
+  width: 12px;
+  height: 12px;
+  border: 2px solid #28a54c;
+  background-color: #33cd5f;
+  border-radius: 50%;
+}
+
+.almost {
+  display: inline-block;
+  /*margin: 5%;*/
+  width: 12px;
+  height: 12px;
+  border: 2px solid #28a54c;
+  background-color: white;
+  border-radius: 50%;
+}
+

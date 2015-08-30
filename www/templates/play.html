@@ -1,0 +1,62 @@
+<ion-view view-title="M A S T E R M I N D">
+  <ion-header-bar class="row bar bar-subheader bar-stable">
+    <div class="col col-10">
+      &nbsp;
+    </div>
+    <div class="col text-center left-border">
+      Code
+    </div>
+    <div class="col col-20 text-center left-border">
+      Score
+    </div>
+  </ion-header-bar>
+  <ion-content>
+
+    <ion-list>
+      <!-- TODO: Repeat for each turn -->
+      <ion-item class="row turn">
+
+        <div class="col col-10 text-center turn-num">
+          <!-- TODO: Display turn number here -->
+          1
+        </div>
+        <div class="col text-center left-border">
+          <!-- TODO:
+              Display icons in the 4 buttons.
+              You only need to add the class for the icon corresponding
+              to the ICON SET FOR THAT POSITION - see menu.html for hints.
+              If an icon has not been set yet for a position, display a
+              placeholder icon instead such as 'ion-more'.
+              - and -
+              Clicking a button, needs to set that position (data structure)  
+              to the currently selected icon.
+          -->
+          <div class="button-bar">
+            <button class="button button-icon icon //add-class-here"></button>
+            <button class="button button-icon icon //add-class-here"></button>
+            <button class="button button-icon icon //add-class-here"></button>
+            <button class="button button-icon icon //add-class-here"></button>
+          </div>
+        </div>
+        <div class="col col-20 text-center left-border">
+          <div class="score-wrap">
+            <!-- TODO: If not current turn, display the score for turn. 
+                   The score should show a <div> with a class of 'perfect' 
+                   for each position with correct icon and position 
+                   AND a <div> with a class of 'almost' for each position 
+                   with correct icon but in the incorrect position. 
+                   None of the <div>s should have any content. 
+                   When is all said and done, there should be anywhere from  
+                   zero to 4 of these: 
+                       <div class="perfect"></div>
+                          - or -
+                       <div class="almost"></div>
+            -->
+          </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

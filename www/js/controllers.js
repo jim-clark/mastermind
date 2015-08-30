@@ -1,56 +1,49 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal) {
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  // These icon classes are for mapping the selected guesses to the UI
+  $scope.icons = ['ion-social-apple', 'ion-social-android','ion-social-angular','ion-social-html5'];
 
-  // Form data for the login modal
-  $scope.loginData = {};
+  // The current selected icon to assign to any clicked position.
+  // TODO: Needs to be set when buttons in menu.html are clicked.
+  $scope.selectedIcon = 0;
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  // Initialize game state
+  $scope.newGame = function() {
+    // TODO: Set all data properties/structures to their beginning state
+
+  };
+
+  // Run newGame() upon loading
+  $scope.newGame();
+
+  /* 
+  TODO: Call this function when the user clicks a 'score' button.
+        The 'score' button should remain disabled until all positions have a value.
+        Maybe a button with an icon of a checkmark would be a good UI choice? Or,
+        just use a small button with text of 'Score'?
+  */
+  $scope.scoreTurn = function() {
+    // TODO: Score the turn
+
+    // TODO: Show winModal IF turn is correct. Put below line in an if statement.
+    // $scope.winModal.show();
+  };
+
+
+  // Create the winner modal.
+  $ionicModal.fromTemplateUrl('templates/winner.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.winModal = modal;
   });
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
+  // TODO: Call this function from the 'Play Again!' button in winModal's html (winner.html)
+  $scope.playAgain = function() {
+    $scope.newGame();
+    $scope.winModal.hide();
   };
 
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });
+
