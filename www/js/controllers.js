@@ -26,13 +26,6 @@ angular.module('starter.controllers', [])
     // Init the array of turns
     $scope.turns = [];
     $scope.turns.push(new Turn());
-
-    //testing
-    $scope.turns[0].perfect = 2;
-    $scope.turns[0].almost = 2;
-    $scope.turns.push(new Turn());
-
-
   };
 
   // Run newGame() upon loading

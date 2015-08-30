@@ -22,6 +22,7 @@
         <div class="col text-center left-border">
           <div class="button-bar">
             <button class="button button-icon icon" ng-repeat="pos in range(numPositions) track by $index"
+                ng-click="turn.positions[$index] = selectedIcon"
                 ng-class="icons[turn.positions[$index]] || placeholderIcon"></button>
           </div>
         </div>
