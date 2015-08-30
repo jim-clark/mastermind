@@ -20,6 +20,12 @@ angular.module('starter.controllers', [])
   $scope.newGame = function() {
     // Init the secret code
     code = generateCode();
+
+    // Init the array of turns
+    $scope.turns = [];
+    $scope.turns.push(new Turn());
+
+
     // TODO: Set all data properties/structures to their beginning state
 
   };
@@ -53,6 +59,21 @@ angular.module('starter.controllers', [])
     $scope.newGame();
     $scope.winModal.hide();
   };
+
+  // Constructor for a Turn object
+  function Turn() {
+    this.positions = [];
+    for (var i = 0; i < $scope.numPositions; i++) {
+      this.positions.push(null); // null = no icon picked yet by user
+    }
+    this.perfect = 0;
+    this.almost = 0;
+  }
+  // Add 'score' method to Turn objects
+  Turn.prototype.score = function() {
+
+  };
+
 
   // Helper functions
 
