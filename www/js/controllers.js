@@ -6,7 +6,6 @@ angular.module('starter.controllers', [])
   $scope.icons = ['ion-social-apple', 'ion-social-android','ion-social-angular','ion-social-html5'];
 
   // The current selected icon to assign to any clicked position.
-  // TODO: Needs to be set when buttons in menu.html are clicked.
   $scope.selectedIcon = 0;
 
   // This will make it easier if we want to increase difficulty later with more positions and/or icons
@@ -28,7 +27,6 @@ angular.module('starter.controllers', [])
     $scope.turns = [];
     $scope.turns.push(new Turn());
 
-
     // TODO: Set all data properties/structures to their beginning state
 
   };
@@ -49,12 +47,18 @@ angular.module('starter.controllers', [])
     // $scope.winModal.show();
   };
 
-  // Returns the class name for the picked icon given a position.
-  // Will return 
-  $scope.getPickedIcon = function(pos) {
-
+  $scope.disableScoreButton = function() {
+    // Get picks for the current turn
+    var picks = $scope.turns[$scope.turns.length - 1].positions;
+    var missingPicks = false;
+    for (var i = 0; i < picks.length; i++) {
+      if (picks[i] === null) {
+        missingPicks = true;
+        break;
+      }
+    }
+    return missingPicks;
   }
-
 
   // Returns a bogus array for ng-repeat to loop through a number of times.
   // Used to provide an array with a size equal to $scope.numPostions
@@ -88,7 +92,6 @@ angular.module('starter.controllers', [])
   Turn.prototype.score = function() {
 
   };
-
 
   // Helper functions
 

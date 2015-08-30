@@ -38,22 +38,28 @@
         </div>
         <div class="col col-20 text-center left-border">
           <div class="score-wrap">
-            <!-- TODO: If not current turn, display the score for turn. 
-                   The score should show a <div> with a class of 'perfect' 
-                   for each position with correct icon and position 
-                   AND a <div> with a class of 'almost' for each position 
-                   with correct icon but in the incorrect position. 
-                   None of the <div>s should have any content. 
-                   When is all said and done, there should be anywhere from  
-                   zero to 4 of these: 
-                       <div class="perfect"></div>
-                          - or -
-                       <div class="almost"></div>
+            <!-- TODO:
+                  If not current turn, display the score for turn. 
+                  The score should show a <div> with a class of 'perfect' 
+                  for each position with correct icon and position 
+                  AND a <div> with a class of 'almost' for each position 
+                  with correct icon but in the incorrect position. 
+                  None of the <div>s should have any content. 
+                  When is all said and done, there should be anywhere from  
+                  zero to 4 of these: 
+                      <div class="perfect"></div>
+                        - or -
+                      <div class="almost"></div>
             -->
+
+            <!-- show button if current turn -->
+            <button class="button button-small button-calm" ng-show="$index === turns.length - 1" ng-disabled="disableScoreButton()">score</button>
+
           </div>
         </div>
 
-      </ion-item>
+      </ion-item> <!-- end of ng-repeat for each turn-->
+
     </ion-list>
 
   </ion-content>
