@@ -29,7 +29,7 @@
 
 .perfect {
   display: inline-block;
-  /*margin: 5%;*/
+  margin-left: 2px;
   width: 12px;
   height: 12px;
   border: 2px solid #28a54c;
@@ -39,12 +39,17 @@
 
 .almost {
   display: inline-block;
-  /*margin: 5%;*/
+  margin-left: 2px;
   width: 12px;
   height: 12px;
   border: 2px solid #28a54c;
   background-color: white;
   border-radius: 50%;
 }
+
+.almost.first {
+  margin-left: -2px;
+}
+
 
 

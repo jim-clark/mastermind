@@ -53,7 +53,11 @@
             -->
 
             <!-- show button if current turn -->
-            <button class="button button-small button-calm" ng-show="$index === turns.length - 1" ng-disabled="disableScoreButton()">score</button>
+            <button class="button button-small button-calm" ng-show="$index === turns.length - 1" ng-disabled="disableScoreButton()">&nbsp; score &nbsp;</button>
+
+            <!-- show scores for previous turns -->
+            <div class="perfect" ng-repeat="num in range(turn.perfect) track by $index"></div>
+            <div class="almost" ng-repeat="num in range(turn.almost) track by $index" ng-class="{'first': $index===0}"></div>
 
           </div>
         </div>

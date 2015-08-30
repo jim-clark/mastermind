@@ -27,7 +27,11 @@ angular.module('starter.controllers', [])
     $scope.turns = [];
     $scope.turns.push(new Turn());
 
-    // TODO: Set all data properties/structures to their beginning state
+    //testing
+    $scope.turns[0].perfect = 2;
+    $scope.turns[0].almost = 2;
+    $scope.turns.push(new Turn());
+
 
   };
 
