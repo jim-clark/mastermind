@@ -9,8 +9,17 @@ angular.module('starter.controllers', [])
   // TODO: Needs to be set when buttons in menu.html are clicked.
   $scope.selectedIcon = 0;
 
+  // This will make it easier if we want to increase difficulty later with more positions and/or icons
+  $scope.numPositions = 4;
+  $scope.numIcons = 4;
+
+  // Holds the secret code
+  var code;
+
   // Initialize game state
   $scope.newGame = function() {
+    // Init the secret code
+    code = generateCode();
     // TODO: Set all data properties/structures to their beginning state
 
   };
@@ -44,6 +53,16 @@ angular.module('starter.controllers', [])
     $scope.newGame();
     $scope.winModal.hide();
   };
+
+  // Helper functions
+
+  function generateCode() {
+    var a = [];
+    for (var i = 0; i < $scope.numPositions; i++) {
+      a.push(Math.floor(Math.random() * $scope.numIcons));
+    }
+    return a;
+  }
 
 });
 
