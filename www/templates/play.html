@@ -14,7 +14,7 @@
 
     <ion-list>
       <!-- TODO: Repeat for each turn -->
-      <ion-item class="row turn">
+      <ion-item class="row turn" ng-repeat="turn in turns track by $index">
 
         <div class="col col-10 text-center turn-num">
           <!-- TODO: Display turn number here -->
@@ -32,10 +32,8 @@
               to the currently selected icon.
           -->
           <div class="button-bar">
-            <button class="button button-icon icon //add-class-here"></button>
-            <button class="button button-icon icon //add-class-here"></button>
-            <button class="button button-icon icon //add-class-here"></button>
-            <button class="button button-icon icon //add-class-here"></button>
+            <button class="button button-icon icon" ng-repeat="pos in range(numPositions) track by $index"
+                ng-class="icons[turn.positions[$index]] || placeholderIcon"></button>
           </div>
         </div>
         <div class="col col-20 text-center left-border">

@@ -16,6 +16,9 @@ angular.module('starter.controllers', [])
   // Holds the secret code
   var code;
 
+  // The icon class to display when a pick has not been made for a position
+  $scope.placeholderIcon = 'ion-more';
+
   // Initialize game state
   $scope.newGame = function() {
     // Init the secret code
@@ -46,6 +49,18 @@ angular.module('starter.controllers', [])
     // $scope.winModal.show();
   };
 
+  // Returns the class name for the picked icon given a position.
+  // Will return 
+  $scope.getPickedIcon = function(pos) {
+
+  }
+
+
+  // Returns a bogus array for ng-repeat to loop through a number of times.
+  // Used to provide an array with a size equal to $scope.numPostions
+  $scope.range = function(size) {
+    return new Array(size);
+  }
 
   // Create the winner modal.
   $ionicModal.fromTemplateUrl('templates/winner.html', {
