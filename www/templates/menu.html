@@ -15,10 +15,10 @@
     <div class="bar bar-footer bar-stable">
       <div class="button-bar select-icons">
         <!-- FYI, could have easily used a function to return the addional class... --> 
-        <button class="button button-icon {{icons[0] + (selectedIcon != 0 ? '-outline' : ' selected-icon')}}"></button>
-        <button class="button button-icon {{icons[1] + (selectedIcon != 1 ? '-outline' : ' selected-icon')}}"></button>
-        <button class="button button-icon {{icons[2] + (selectedIcon != 2 ? '-outline' : ' selected-icon')}}"></button>
-        <button class="button button-icon {{icons[3] + (selectedIcon != 3 ? '-outline' : ' selected-icon')}}"></button>
+        <button class="button button-icon {{icons[0] + (selectedIcon != 0 ? '-outline' : ' selected-icon')}}" ng-click="selectedIcon = 0"></button>
+        <button class="button button-icon {{icons[1] + (selectedIcon != 1 ? '-outline' : ' selected-icon')}}" ng-click="selectedIcon = 1"></button>
+        <button class="button button-icon {{icons[2] + (selectedIcon != 2 ? '-outline' : ' selected-icon')}}" ng-click="selectedIcon = 2"></button>
+        <button class="button button-icon {{icons[3] + (selectedIcon != 3 ? '-outline' : ' selected-icon')}}" ng-click="selectedIcon = 3"></button>
       </div>
     </div>
   
