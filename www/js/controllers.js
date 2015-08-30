@@ -31,17 +31,16 @@ angular.module('starter.controllers', [])
   // Run newGame() upon loading
   $scope.newGame();
 
-  /* 
-  TODO: Call this function when the user clicks a 'score' button.
-        The 'score' button should remain disabled until all positions have a value.
-        Maybe a button with an icon of a checkmark would be a good UI choice? Or,
-        just use a small button with text of 'Score'?
-  */
   $scope.scoreTurn = function() {
-    // TODO: Score the turn
+    var curTurn = $scope.turns[$scope.turns.length - 1];
+    curTurn.score();
 
-    // TODO: Show winModal IF turn is correct. Put below line in an if statement.
-    // $scope.winModal.show();
+    // Show winModal IF turn is correct, otherwise, next turn
+    if (curTurn.isWinner) {
+      $scope.winModal.show();
+    } else {
+      $scope.turns.push(new Turn());
+    }
   };
 
   $scope.disableScoreButton = function() {
@@ -55,13 +54,13 @@ angular.module('starter.controllers', [])
       }
     }
     return missingPicks;
-  }
+  };
 
   // Returns a bogus array for ng-repeat to loop through a number of times.
   // Used to provide an array with a size equal to $scope.numPostions
   $scope.range = function(size) {
     return new Array(size);
-  }
+  };
 
   // Create the winner modal.
   $ionicModal.fromTemplateUrl('templates/winner.html', {
@@ -85,10 +84,43 @@ angular.module('starter.controllers', [])
     this.perfect = 0;
     this.almost = 0;
   }
+
   // Add 'score' method to Turn objects
   Turn.prototype.score = function() {
+    var self = this;
+    // Make copies so we don't mess with actual positions
+    var picks = self.positions.slice();
+    var secret = code.slice();
 
-  };
+    // Score the turn, first check for perfect picks
+    self.perfect = 0;
+    for (var i = 0; i < secret.length; i++) {
+      if (picks[i] === secret[i]) {
+        self.perfect++;
+        picks[i] = null;
+        secret[i] = null;
+      }
+    }
+
+    // Next, check for almosts
+    self.almost = 0;
+    if (self.perfect < code.length) {
+      self.isWinner = false;
+      secret.forEach(function(sec) {
+        if (sec != null) {
+          for (var i = 0; i < picks.length; i++) {
+            if (sec === picks[i]) {
+              picks[i] = null;
+              self.almost++;
+              break;
+            }
+          }
+        }
+      });
+    } else {
+      self.isWinner = true;
+    }
+  }; // end Turn.prototype.score
 
   // Helper functions
 

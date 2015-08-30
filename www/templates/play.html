@@ -29,8 +29,10 @@
         <div class="col col-20 text-center left-border">
           <div class="score-wrap">
 
-            <!-- show button if current turn -->
-            <button class="button button-small button-calm" ng-show="$index === turns.length - 1" ng-disabled="disableScoreButton()">&nbsp; score &nbsp;</button>
+            <!-- show button if current turn and not winner -->
+            <button class="button button-small button-calm" ng-show="$index === turns.length - 1 && !turn.isWinner"
+                ng-disabled="disableScoreButton()"
+                ng-click="scoreTurn()">&nbsp; score &nbsp;</button>
 
             <!-- show scores for previous turns -->
             <div class="perfect" ng-repeat="num in range(turn.perfect) track by $index"></div>
