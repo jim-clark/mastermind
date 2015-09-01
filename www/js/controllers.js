@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
   $scope.numPositions = 4;
   $scope.numIcons = 4;
 
-  // Holds the secret code
+  // The secret code
   var code;
 
   // The icon class to display when a pick has not been made for a position
@@ -25,27 +25,26 @@ angular.module('starter.controllers', [])
 
     // Init the array of turns
     $scope.turns = [];
-    $scope.turns.push(new Turn());
+    nextTurn();
   };
 
   // Run newGame() upon loading
   $scope.newGame();
 
   $scope.scoreTurn = function() {
-    var curTurn = $scope.turns[$scope.turns.length - 1];
-    curTurn.score();
+    $scope.currentTurn.score();
 
     // Show winModal IF turn is correct, otherwise, next turn
-    if (curTurn.isWinner) {
+    if ($scope.currentTurn.isWinner) {
       $scope.winModal.show();
     } else {
-      $scope.turns.push(new Turn());
+      nextTurn();
     }
   };
 
   $scope.disableScoreButton = function() {
     // Get picks for the current turn
-    var picks = $scope.turns[$scope.turns.length - 1].positions;
+    var picks = $scope.currentTurn.positions;
     var missingPicks = false;
     for (var i = 0; i < picks.length; i++) {
       if (picks[i] === null) {
@@ -107,7 +106,7 @@ angular.module('starter.controllers', [])
     if (self.perfect < code.length) {
       self.isWinner = false;
       secret.forEach(function(sec) {
-        if (sec != null) {
+        if (sec !== null) {
           for (var i = 0; i < picks.length; i++) {
             if (sec === picks[i]) {
               picks[i] = null;
@@ -124,6 +123,11 @@ angular.module('starter.controllers', [])
 
   // Helper functions
 
+  function nextTurn() {
+    $scope.turns.push(new Turn());
+    $scope.currentTurn = $scope.turns[$scope.turns.length - 1];
+  }
+
   function generateCode() {
     var a = [];
     for (var i = 0; i < $scope.numPositions; i++) {
@@ -133,4 +137,3 @@ angular.module('starter.controllers', [])
   }
 
 });
-

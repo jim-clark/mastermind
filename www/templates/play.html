@@ -30,7 +30,7 @@
           <div class="score-wrap">
 
             <!-- show button if current turn and not winner -->
-            <button class="button button-small button-calm" ng-show="$index === turns.length - 1 && !turn.isWinner"
+            <button class="button button-small button-calm" ng-show="turn === currentTurn && !turn.isWinner"
                 ng-disabled="disableScoreButton()"
                 ng-click="scoreTurn()">&nbsp; score &nbsp;</button>
 
