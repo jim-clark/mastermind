@@ -1,3 +1,4 @@
+<!-- Nothing TODO in here - all is well -->
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
 
@@ -9,19 +10,19 @@
         </button>
       </ion-nav-buttons>
     </ion-nav-bar>
-    
+
     <ion-nav-view name="menuContent"></ion-nav-view>
 
     <div class="bar bar-footer bar-stable">
       <div class="button-bar select-icons">
-        <!-- FYI, could have easily used a function to return the addional class... --> 
+        <!-- FYI, could have easily used a function to return the addional class... -->
         <button class="button button-icon {{icons[0] + (selectedIcon != 0 ? '-outline' : ' selected-icon')}}"></button>
         <button class="button button-icon {{icons[1] + (selectedIcon != 1 ? '-outline' : ' selected-icon')}}"></button>
         <button class="button button-icon {{icons[2] + (selectedIcon != 2 ? '-outline' : ' selected-icon')}}"></button>
         <button class="button button-icon {{icons[3] + (selectedIcon != 3 ? '-outline' : ' selected-icon')}}"></button>
       </div>
     </div>
-  
+
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
