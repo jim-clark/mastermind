@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
   // Run newGame() upon loading
   $scope.newGame();
 
-  /* 
+  /*
   TODO: Call this function when the user clicks a 'score' button.
         The 'score' button should remain disabled until all positions have a value.
         Maybe a button with an icon of a checkmark would be a good UI choice? Or,
@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
   $scope.scoreTurn = function() {
     // TODO: Score the turn
 
-    // TODO: Show winModal IF turn is correct. Put below line in an if statement.
+    // TODO: Show winModal IF turn is correct. Put line below in an if statement.
     // $scope.winModal.show();
   };
 
@@ -46,4 +46,3 @@ angular.module('starter.controllers', [])
   };
 
 });
-
