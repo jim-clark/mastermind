@@ -9,6 +9,9 @@ angular.module('starter.controllers', [])
   // TODO: Needs to be set when buttons in menu.html are clicked.
   $scope.selectedIcon = 0;
 
+  // TODO: You're going to need a data structure to hold a list of "turns";
+  // and those "turns" are likely going to be objects...
+
   // Initialize game state
   $scope.newGame = function() {
     // TODO: Set all data properties/structures to their beginning state

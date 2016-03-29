@@ -25,14 +25,14 @@
         </div>
         <div class="col text-center left-border">
           <!-- TODO:
-              Display icons in the 4 buttons below.
-              You only need to add the class for the icon corresponding
-              to the ICON SET FOR THAT POSITION - see menu.html for hints.
-              If an icon has not been set yet for a position, display a
-              placeholder icon instead such as 'ion-more'.
-              - and -
-              Clicking a button, always needs to set that position (data structure)
-              to the currently selected icon.
+            Display icons in the 4 buttons below.
+            You only need to add the class for the icon corresponding
+            to the ICON SET FOR THAT POSITION - see menu.html for hints.
+            If an icon has not been set yet for a position, display a
+            placeholder icon instead such as 'ion-more'.
+            - and -
+            Clicking a button, always needs to set that position (data structure)
+            to the currently selected icon.
           -->
           <div class="button-bar">
             <button class="button button-icon icon //add-class-here"></button>
@@ -43,17 +43,21 @@
         </div>
         <div class="col col-20 text-center left-border">
           <div class="score-wrap">
-            <!-- TODO: If not current turn, display the score for turn.
-                   The score should show a <div> with a class of 'perfect'
-                   for each position with correct icon and position
-                   AND a <div> with a class of 'almost' for each position
-                   with correct icon but in the incorrect position.
-                   None of the <div>s should have any content.
-                   When all is said and done, there should be anywhere from
-                   zero to 4 of these:
-                       <div class="perfect"></div>
-                          - or -
-                       <div class="almost"></div>
+            <!-- TODO:
+              If this turn is the current turn, display a [score] button
+              that's disabled unless an icon has been chosen for all positions.
+              
+              If not current turn, display the score for turn.
+              The score should show a <div> with a class of 'perfect'
+              for each position with correct icon and position
+              AND a <div> with a class of 'almost' for each position
+              with correct icon but in the incorrect position.
+              None of the <div>s should have any content.
+              When all is said and done, there should be anywhere from
+              zero to 4 of these:
+                <div class="perfect"></div>
+                  - or -
+                <div class="almost"></div>
             -->
           </div>
         </div>
