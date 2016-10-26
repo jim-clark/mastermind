@@ -94,27 +94,21 @@ angular.module('starter.controllers', [])
 
     // Score the turn, first check for perfect picks
     self.perfect = 0;
-    for (var i = 0; i < secret.length; i++) {
-      if (picks[i] === secret[i]) {
+    picks.forEach(function(pick, idx) {
+      if (pick === secret[idx]) {
         self.perfect++;
-        picks[i] = null;
-        secret[i] = null;
+        picks[idx] = secret[idx] = null;
       }
-    }
+    });
 
     // Next, check for almosts
     self.almost = 0;
     if (self.perfect < code.length) {
       self.isWinner = false;
       secret.forEach(function(sec) {
-        if (sec != null) {
-          for (var i = 0; i < picks.length; i++) {
-            if (sec === picks[i]) {
-              picks[i] = null;
-              self.almost++;
-              break;
-            }
-          }
+        if (sec !== null && picks.includes(sec)) {
+          self.almost++;
+          picks[picks.indexOf(sec)] = null;
         }
       });
     } else {
@@ -133,4 +127,3 @@ angular.module('starter.controllers', [])
   }
 
 });
-
