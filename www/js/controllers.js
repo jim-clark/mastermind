@@ -42,17 +42,8 @@ angular.module('starter.controllers', [])
     }
   };
 
-  $scope.disableScoreButton = function() {
-    // Get picks for the current turn
-    var picks = $scope.currentTurn.positions;
-    var missingPicks = false;
-    for (var i = 0; i < picks.length; i++) {
-      if (picks[i] === null) {
-        missingPicks = true;
-        break;
-      }
-    }
-    return missingPicks;
+  $scope.turnHasNulls = function() {
+    return $scope.currentTurn.positions.some(pos => pos === null);
   };
 
   // Returns a bogus array for ng-repeat to loop through a number of times.

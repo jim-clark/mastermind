@@ -31,7 +31,7 @@
 
             <!-- show button if current turn and not winner -->
             <button class="button button-small button-calm" ng-show="turn === currentTurn && !turn.isWinner"
-                ng-disabled="disableScoreButton()"
+                ng-disabled="turnHasNulls()"
                 ng-click="scoreTurn()">&nbsp; score &nbsp;</button>
 
             <!-- show scores for previous turns -->
